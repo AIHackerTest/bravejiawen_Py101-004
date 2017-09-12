@@ -1,0 +1,34 @@
+<html lang="zh-cn">
+<head>
+<!-- <link rel="stylesheet" type="text/css" href=" ../static/mystyle.css">-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<title>天气查询小程序</title>
+
+<div class="weather">
+    {% if name %}
+    <h1>Hello {{name}}!</h1>
+    {% else %}
+    <h1>欢迎使用天气查询！</h1>
+    {% endif %} <!-- 这里实际是需要endif而不是end if-->
+<br/>
+    <form id="cityWeather" method="get">
+        <input type="text" name="city" placeholder="请输入想查询的城市"> <button type="submit" form="cityWeather" value="提交">查询</button>
+        <button type="submit" form="cityWeather" name="history" value="history" >历史</button>
+        <button type="submit" name="help" value="help">帮助</button>
+    </form>
+    {% if weather %}
+    <h3>{{ weather }}</h3>
+    {% elif history %}
+        {% for x in history %}
+        <h3>{{ x }}</h3>
+        {% endfor %}
+    {% elif help %}
+        {% for m in help.split('\n') %}
+        <h3>{{ m }}</h3>
+        {% endfor %}
+    {% endif %}
+
+</div>
+
+</html>

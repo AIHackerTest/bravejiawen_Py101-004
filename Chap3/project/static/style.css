@@ -1,0 +1,24 @@
+body {background-color:tan;}
+h1   {color:maroon;font-size:24pt;}
+
+.weather{
+    margin:auto;
+    margin-top:15px;
+    width:50%;
+    font-family:KaiTi;
+}
+
+#cityWeather {
+    margin-top:5px;
+    font-size:22px;
+}
+input {
+    height:40px;
+    width:250px;
+    float:auto;
+    padding-top:7px;
+}
+button {
+    font-size:20px;
+    height:38px;
+}
